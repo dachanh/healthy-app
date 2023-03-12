@@ -62,12 +62,14 @@ curl --request POST \
 
 # Diary
 
+this api will be responsed on `My record` page
+
 ```
-GET /diary/:id?page=[page]&limit=[limit]
+GET /diary/:id
 
 id : user id 
-page, limit: pagination 
 ```
+List all diary information of the user
 response if successful, api will response user 's diary 
 
 
@@ -77,34 +79,67 @@ curl --request GET \
   --url http://127.0.0.1:8176/diary/1
 ```
 
-```
-[
-  {
-    "ID": 1,
-    "content": "Today was a good day!",
-    "created_at": "2023-03-11T12:40:31.848111Z",
-    "updated_at": "2023-03-11T12:40:31.848111Z"
-  }
-]
-```
-
 # Excerise History 
+this api will be responsed on `My record` page
 
 ```
-GET /excerice-history/:id
+GET /exercise-history/:id
 
 id : User 's id
 ```
 
+Example with curl:
 ```
 curl --request GET \
-  --url http://127.0.0.1:8176/excerice-history/1
+  --url http://127.0.0.1:8176/exercise-history/1
 ```
 
 # News 
+This api will response News on the `Column page`
+
+```
+GET  /news
+```
 
 ```
 curl --request GET \
   --url http://127.0.0.1:8176/news
 ```
+
+# Meal history
+
+this api will be reponsed the meal of user and display on `Top page`
+
+```
+GET  /meal-history/:id
+id : the user 's id
+```
+
+Example with curl:
+```
+curl --request GET \
+  --url http://127.0.0.1:8176/meal-history/1
+```
+
+# Meal history by Session
+
+if session = 1 , the meal for morning
+if session = 2 , the meal for lunch
+if session = 3 , the meal for dinner
+
+```
+GET /meal-history/:id/:session
+id : the user 's id
+session: the session id that I define above
+```
+
+Example with curl:
+
+```
+curl --request GET \
+  --url http://127.0.0.1:8176/meal-history/1/1
+```
+
+
+
 
