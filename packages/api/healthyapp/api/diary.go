@@ -59,6 +59,6 @@ func (s *Server) getUserDiary(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusOK, got)
+	ctx.JSON(http.StatusOK, SimpleSuccessResponse(got))
 	return
 }

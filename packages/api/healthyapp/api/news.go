@@ -25,5 +25,5 @@ func (s *Server) listNews(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusAccepted, got)
+	ctx.JSON(http.StatusAccepted, SimpleSuccessResponse(got))
 }

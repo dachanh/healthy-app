@@ -13,6 +13,12 @@ type Server struct {
 	router *gin.Engine
 }
 
+type successRes struct {
+	Data   interface{} `json:"data"`
+	Paging interface{} `json:"paging,omitempty"`
+	Filter interface{} `json:"filter,omitempty"`
+}
+
 var (
 	DEFAULT_LIMIT = 10
 	DEFAULT_OFFET = 0
@@ -38,7 +44,7 @@ func (server *Server) setupRouter() {
 	router.GET("/diary/:id", server.getUserDiary)
 	router.POST("/diary", server.createDiary)
 
-	router.GET("/excerice-history/:id", server.getExercseHistoryOfUser)
+	router.GET("/exercise-history/:id", server.getExerciseHistoryOfUser)
 
 	router.GET("/news", server.listNews)
 
@@ -52,4 +58,12 @@ func (server *Server) Start(address string) error {
 
 func errorResponse(err error) gin.H {
 	return gin.H{"error": err.Error()}
+}
+
+func NewSuccessResponse(data, paging, filter interface{}) *successRes {
+	return &successRes{Data: data, Paging: paging, Filter: filter}
+}
+
+func SimpleSuccessResponse(data interface{}) *successRes {
+	return NewSuccessResponse(data, nil, nil)
 }

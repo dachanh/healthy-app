@@ -46,11 +46,11 @@ func (s *Server) getExercseHistoryByDate(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusAccepted, got)
+	ctx.JSON(http.StatusAccepted, SimpleSuccessResponse(got))
 	return
 }
 
-func (s *Server) getExercseHistoryOfUser(ctx *gin.Context) {
+func (s *Server) getExerciseHistoryOfUser(ctx *gin.Context) {
 	var req exceriseHistoryOfUserRequest
 	var page = ctx.DefaultQuery("page", "1")
 	var limit = ctx.DefaultQuery("limit", "10")
@@ -75,6 +75,6 @@ func (s *Server) getExercseHistoryOfUser(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusAccepted, got)
+	ctx.JSON(http.StatusAccepted, SimpleSuccessResponse(got))
 	return
 }

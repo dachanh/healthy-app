@@ -43,7 +43,7 @@ func (s *Server) listMealHistorybySession(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusAccepted, got)
+	ctx.JSON(http.StatusAccepted, SimpleSuccessResponse(got))
 }
 
 func (s *Server) listMealHistory(ctx *gin.Context) {
@@ -70,5 +70,5 @@ func (s *Server) listMealHistory(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusAccepted, got)
+	ctx.JSON(http.StatusAccepted, SimpleSuccessResponse(got))
 }
