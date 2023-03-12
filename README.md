@@ -48,16 +48,6 @@ Content-Length: 66
 ```
 If Login successfull, the api will response user 's information
 
-```
-  {
-    "ID": 2,
-    "first_name": "John",
-    "last_name": "Doe",
-    "email": "johndoe@example.com",
-    "password": "password123"
-  }
-```
-
 Example with curl:
 
 ```
