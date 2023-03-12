@@ -90,9 +90,9 @@ curl --request GET \
 
 # Meal history by Session
 
-if session = 1 , the meal for morning
-if session = 2 , the meal for lunch
-if session = 3 , the meal for dinner
+if session = 1 , the meal for morning <br/>
+if session = 2 , the meal for lunch <br/>
+if session = 3 , the meal for dinner <br/>
 
 ```
 GET /meal-history/:id/:session
