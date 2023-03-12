@@ -1,6 +1,4 @@
 
-API Document :
-
 # Login
 
 Request :
