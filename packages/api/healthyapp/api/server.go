@@ -48,6 +48,9 @@ func (server *Server) setupRouter() {
 
 	router.GET("/news", server.listNews)
 
+	router.GET("/meal-history/:id", server.listMealHistory)
+
+	router.GET("/meal-history/:id/:session", server.listMealHistorybySession)
 	server.router = router
 }
 
