@@ -1,4 +1,4 @@
-# arent-healthy-app
+# healthy-app
 
 this is [diagram](https://dbdiagram.io/d/640414bf296d97641d8576f1) of this project
 
